@@ -1,0 +1,330 @@
+学习Java中各种常见的程序分析题，希望会帮助到各位：
+
+1、有如下代码
+	List<String> list = new ArrayList<>();
+	list.add("hello");
+	list.add("world");
+	list.add("tom");
+	list.add("briup");
+	for(int i=0;i<list.size();i++){
+		System.out.println(list.get(i));
+		if("tom".equals(list.get(i))){
+			//代码补全
+		}
+	}
+	要求把if条件中的代码补全，最后把list集合中的四个值依次输出，同时如果当前的值是tom则需要把该值从list中删除掉。
+
+参考答案
+	if("tom".equals(list.get(i))){
+		list.remove(i);//list.remove("tom");也可以
+		i--;
+	}
+
+2、有以下代码
+	class Base{
+		public Base(String s){
+			System.out.println("Base: "+s);
+		}
+	}
+	class SubA extends Base{
+		public SubA(String s){
+			System.out.println("SubA: "+s);
+		}
+		public static void main(String[] args){
+			new SubA("hello");
+		}
+	}
+	编译运行后的结果是什么？为什么？
+
+参考答案
+	编译报错
+
+	因为父类中没有无参构造器，而子类构造器中隐式调用了父类的无参构造器
+
+3、有以下代码，要求把变量a和变量b的值进行交换，并且要求不能使用第三个变量。
+	int a = 15;
+	int b = 3;
+ 
+参考答案:	
+	a = a+b; 
+	b = a-b;
+	a = a-b;
+	--------
+	a = a^b;
+	b = a^b;
+	a = a^b;
+	--------
+	a = a*b;
+	b = a/b;
+	a = a/b;
+
+4、java中的方法调用有一种情况称为递归,就是一个方法内部再调用自己,同时提供一个退出方法条件即可.有如下代码
+	Test.java中:
+	main:
+		Test t = new Test();
+		int sum = t.go(100);
+		System.out.println(sum);
+	----------------------------
+	public int go(int i){
+		...
+		...
+	}
+
+	要求:
+	1.在go方法内部完成代码
+	2.实现从1累加到100的和
+	3.go方法内部的所写的代码不能超过俩句，注意一个分号就是一句代码。
+	
+参考答案
+	public int go(int i){
+		if(i==1)return 1;
+		return i+go(i-1);
+	}
+
+
+5、有以下代码
+	public void test()throws Exception{
+		synchronized (getClass()) {
+			for(int i=0;i<100;i++){
+				if(i==10){
+					wait();
+				}
+			}
+		}
+	}
+	代码编译运行的结果是什么？为什么？
+
+参考答案
+	编译不报错，运行报错，只要锁对象才能调用wait方法，这里的锁对象是Class对象而不是this
+
+
+6、有以下代码	
+	public class Hello {
+		public static void main(String[] args)throws Exception {
+			Thread t = new Thread(){
+				public void run() {
+					//很耗时的操作
+				}
+			};
+			t.start();
+
+			t.sleep(6000);//代码1
+		}
+	}
+
+	解释代码1的含义
+
+参考答案
+	sleep是Thread类中的静态方法，所以代码1可以写出Thread.sleep(6000),意思是让当前线程睡眠6秒钟，而这里的当前线程指的是main线程，所有最终是main线程睡眠6秒钟
+
+
+7、有以下代码
+	ArrayList<Object> list = new ArrayList<String>();
+	代码编译运行会不会报错？为什么？
+参考答案
+	编译报错
+	
+	ArrayList<Object> 和 ArrayList<String>是俩个不同的类型，并且没有任何关系。
+	
+	ArrayList<?>才是所有ArrayList加了泛型类型的父类型
+
+8、有以下代码	
+	public interface Test{
+		<T> T t(T t);//代码1
+	}
+	解释代码1的含义
+参考答案	
+	这是一个泛型方法，方法名字为t，方法的参数类型，由将来用户实际传的值的类型所决定，并且方法的返回类型和参数类型保持一致。
+
+
+
+9、有以下代码	
+	public class Test{
+		public static final String s;
+
+		public Test(){
+			s = "hello";
+		}
+
+		public static void main(String[] args){
+			System.out.println(s);
+		}
+	}
+	编译运行后的结果是什么？为什么？
+
+参考答案
+	编译报错
+	static final修饰的属性，只能在声明的时候或者在static代码中赋值，而且只能赋一次值。
+
+
+10、有以下代码
+	public class A{
+		public void test1(){
+			System.out.println("A test1");
+		}
+	}
+	public class B extends A{
+		public void test1(){
+			System.out.println("B test1");
+		}
+		public void test2(){
+			System.out.println("B test2");
+		}
+		public static void main(String[] args){
+			A a = new B();
+			a.test1();
+			a.test2();
+		}
+	}
+	编译运行后的结果是什么？为什么？
+
+参考答案
+	编译报错，变量a是A类型的，无法调用到test2方法，因为test2方法是B类中独有的
+
+
+11、有以下代码
+	public class A{
+		public void sayHello(){
+			System.out.println("hello A");
+		}
+		public A(){
+			this.sayHello();
+		}
+	}
+
+	public class B extends A{
+		public void sayHello(){
+			System.out.println("hello B");
+		}
+		public static void main(String[] args){
+			new B();
+		}
+	}
+
+	编译运行后的结果是什么？
+
+参考答案
+	hello B （多态运行子类自己的方法）
+
+12、有以下代码	
+	public class Test{
+		public void sayHello(){
+			System.out.println(this);//代码1
+		}
+		public static void main(){
+			Test t1 = new Test();
+			Test t2 = new Test();
+			t1.sayHello();
+			t2.sayHello();
+		}
+	}
+	main方法在执行过程的中，代码1中的this代表的谁？
+
+
+参考答案
+	当代码执行t1.sayHello()的时候，代码1中的this代表的是t1，当前代码执行t2.sayHello()的时候，代码1中的this代表的是t2。
+
+
+13、有以下代码
+	public class Test{
+		
+		public static void a1(int a){
+			a++;
+		}
+		public static void a2(Student s){
+			s.setName("tom");
+		}
+
+		public static void main(){
+			int a = 1;
+			Test.a1(a);
+			System.out.println(a);//代码1
+
+			Student s = new Student();
+			s.setName("zs");
+			Test.a2(s);
+			System.out.println(s.getName());//代码2
+
+		}
+	
+	}
+
+	分别列出代码1和代码2输出结果是什么？	
+		  1     tom
+
+
+14、下面程序的运行结果是（C）   
+	String str1 = "hello";
+	String str2 = "he" + new String("llo");
+	System.err.println(str1 == str2);           //地址
+	A、0
+	B、null
+	C、false
+	D、true
+
+15、下面程序输出的结果为：（A）
+	String[] a = new String[10];
+	for(int i=0;i<8;i++){
+		System.out.println(a[i]);
+	}
+	输出的结果是：
+	A、8个null
+	B、10个0
+	C、7个null
+	D、8个0
+
+16、以下代码运行的结果为：（B）	
+	public static void main(String args[]) {
+		Thread t = new Thread() {
+			public void run() {
+				pong();
+			}
+		};
+		t.run();
+		System.out.print("ping");
+	}
+	static void pong() {
+		System.out.print("pong");
+	}
+	A、pingpong        
+	B、pongping       
+	C、pingpong和pongping都有可能      
+	D、都不输出
+
+17、17.下面代码的运行结果为：（C）
+	public class foo{
+    		public static void main (String[] args){
+        	String s;
+       		System.out.println("s=" + s);
+    	}
+	}
+A、代码得到编译，并输出“s=”
+B、代码得到编译，并输出“s=null”
+C、由于String s没有初始化，代码不能编译通过
+D、代码得到编译，但捕获到 NullPointException异常
+
+
+18、下面的方法，当输入为2的时候返回值是多少?（D）
+	public int getValue(int i) { 
+		int result = 0; 
+		switch (i) { 
+			case 1: result = result + i;      
+			case 2: result = result + i * 2;      //4
+			case 3: result = result + i * 3;    //10
+		} 
+		return result; 
+	}
+	A、0
+	B、2 
+	C、4 
+	D、10
+
+
+
+
+
+
+
+
+
+

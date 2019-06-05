@@ -1,0 +1,1293 @@
+9.18
+package com.briup.day01;
+import java.util.Date;
+public class Java extends Object{
+   public static void main (String[] args){
+     System.out.println("Good Morning!");
+	}
+}		
+
+public class  ConditionZero Objcet
+{
+    public static void main (String[] args){
+	  System.out.println("");
+   }
+}
+ public class  Administrator Objcet
+ {
+    public static  void main (String[] args){
+	  System.out.println("");
+	  }
+ }
+ public class  Alter Object{
+     public static void main (String[] args){
+	 System.out.println
+	    
+9.20
+ public class  Demo1{
+     public static void main (String[] args){
+	 //在声明变量的时候就已经给他赋了初始值了
+		  int age=20;
+		  System.out.println（age）；
+		  age=21;
+		  System.out.println（age）；
+		  
+		  //可以先声明变量后面再赋值，但是要保证一定要在使用前赋初始值
+		  int count;
+		  //可以加些其他的代码
+		  count=20;     //一定要在使用前赋初始值
+		  System.out.println（count）； 
+		 //有三个int类型的变量
+		 int a=10;
+		 int b=20;
+		 int c=30;
+		 
+		 /*
+		 如果出现了多个数据类型一样的变量，我们可以写在一行里面
+		 
+		 */
+		 int d=10,e=20,f=30;   以后用这个
+		 int g,h,j;
+		 g=10;
+		 h=20;
+		 f=30;
+		 
+		 char g=‘A’；
+		 boolean =true;  //or  false
+		 
+		 long d=12345678L;   
+		 float e=3.14D;
+		 
+		 char c1='A';
+		 char c2='a';
+		 char c3='我';
+		 char c4='\u0060';  //unicode
+		 
+		 
+	 }
+ }
+ 
+ public class  Demo2{
+	 public static void main (String[] args){
+	 //默认转换  小转大
+	 long l=10;
+	 
+	 char c1='A';    65
+	 char c2='a';    97
+	 int num=c1+c2;
+	 
+	 System.out.println(Num);
+	 
+	 //大转小，默认不行，但是我们可以强制类型转换
+	 //目标类型  变量名=（目标类型）（被转换的数据）；
+	 //强转有风险，有可能会造成精度的丢失
+	 int i=（int）(20L*30L)*
+	 
+	 int a=2；
+	 int b=5；
+	 System.out.println(a*1.0/b) 或者System.out.println((double)a/b);
+	 
+     
+	 }
+ }
+ //
+ public class  Demo3 {
+     public static void main (String[] args){
+		 byte b1=3,b2=4,b;
+		 b=b1+b2;  //两个变量做运算，算之前要看你数据类型  应改为b=（byte）b1+b2
+		 b=3+4;    //两个常量作运算，先算再看你数据类型 能否接收
+	 }
+ }
+ 9.21
+  public class  Person {
+	  
+    //属性-->全局变量
+	String name;
+	int age;
+	char sex;
+	//.............
+	
+	//行为方式-->方法
+
+	
+	
+	public void eat(){}
+	public void sleep(){}
+	public void think(){}
+	public void method(){}
+	public void function(){}
+	//
+	
+	
+ }
+  public class  Main {
+     public static void main (String[] args){
+	  Person p=new Person();   //类的初始化/实例化
+	   p.age=20;
+	   p.sxe='';
+	 }
+ }
+ 
+ 9.25
+  public class  Demo3 {
+     public static void main (String[] args){
+     
+	 }
+ }
+  public class  Demo3 {
+     public static void main (String[] args){
+	 }
+ }
+  public class  Demo3 {
+     public static void main (String[] args){
+	 }
+ } public class  Demo3 {
+     public static void main (String[] args){
+	 }
+ }
+  public class  Demo3 {
+     public static void main (String[] args){
+	 }
+ }
+ 9.26
+   int i=11;                              //do..while至少循环一次，先做后问 
+   do{
+	   System.out.println("HelloWorld");
+   }while(i<99)
+	   
+   9.27
+    public class  Demo3 {
+		
+     public static void main (String[] args){
+        //格式一：数据类型[] 数组名;
+		         int[] array；     //推荐
+       //格式一：数据类型 数组名[];
+	              int array[]；
+	  //动态初始化
+	  array = new int[5];
+	  System.out.println(array.length)； //数组的长度
+	  System.out.println(array[0]);    //数组下标代表索引，从0开始，不要出现数组越界的情况
+	  //阈(yu)值  临界值  
+	   
+	  //静态初始化
+	 int [] array ={0,1,2,3,4};	  
+	  System.out.println(array[4]);   //4
+//
+	 for(int i=0;i<array.length;i++)	 
+	   System.out.println(i);         //一维数组的遍历
+//  
+	    int[] arr = new int [10000];
+		 for(int i=0;i<array.length;i++){
+             arr[i]=(i+1);			 
+		 }
+//1-100的偶数个数
+  		int[] arr = new int [50];
+		int num =2;
+		 for(int i=0;i<array.length;i++){
+			  arr[i]=num;
+			  num+=2;
+		 }
+		String s="";    //当常量用，默认final修饰，相当于初始化 必须写，不写的化s每次用的时候得写成string s
+		s += "[";
+		for(int i=0;i<array.length;i++){
+			s += +arr[i];
+			if(!(i==arr.length-1)){
+				s +=",";
+			}
+		}
+		s +="]";
+		
+		System.out.println(num);
+	 
+//  取最大值
+          int flag=array[0];
+        for(int i=0;i<array.length;i++){
+             if(flag<arr[i]){
+				 flag=arr[i];
+			 }
+		}
+		System.out.println(flag);
+                 		   
+// 冒泡排序. （比几轮由array.length-1决定；每一轮比几次：array.length-当前轮数）
+        int[] array={1,3,5,2,8};
+        System.out.println("----排序前的数组----");
+        for(int i=0;i<array.length;i++){
+	       System.out.print(array[i]+" ");
+		}
+           System.out.println();
+
+          for(int i=1;i<=array.length-1;i++){//轮数
+	      for(int j=0;j<array.length-i;j++){ 
+		     if(array[j]>array[j+1])
+		     {
+		      int num = array[j];
+		      array[j] = array[j+1];
+	              array[j+1]=num;
+		     }
+         System.out.println("当前是第"+i+"轮"+"第"+(j+1)+"次");
+	    }
+        }  
+         System.out.println("----排序后的数组----");
+         for(int i=0;i<array.length;i++){
+ 	        System.out.print(array[i]+" ");
+	    }  
+			System.out.println();	
+		  
+   
+   9.28
+       //数据类型[][] 变量名 = new 数据类型[m][n];
+    //  可以分别初始化
+           int[][] arr = new int[3][不填];
+                arr[0] = new int[2];
+                arr[1] = new int[3]
+                arr[2] = new int[1];
+			//遍历
+   for(int i=0;i<array.length;i++){//每一个一维数组
+     for(int j=0;j<array[i].length;j++){//每一个一维数组中的元素
+	    System.out.println(array[i][j]);
+            num+=array[i][j];     //求和
+   
+   9.29
+   public static int add（int a, int b）
+    int c = a+b;
+	return true;   //错误 返回值类型要和方法一致
+   单独调用  add() 没有意义
+   输出调用，System.out.println(add(a,b));
+   赋值调用  int result = add(a,b);   System.out.println(result);    //推荐
+   
+   //不定长参数
+    public static void int add(int a,String b, int...array){
+		int num = 0;
+	    for(int i=0;i<array.length;i++){
+			num+=array[i];
+		}
+		return num;
+	}
+   
+   9.30
+    Private String name;
+	private Int age;
+	private Char sex;
+	Private BoyFriend bf;
+	
+	
+	public void setName(){ }  //隐藏内部细节，对外提供公共访问方式
+   
+   
+  10.8
+        public Student(){
+			  System.out.println(Student的无参构造器)  10.13 
+		}
+  
+  10.9
+  //增强for循环  （虽然简化了遍历，但是丢失了索引信息）
+    Person[] array = {p1,p2,p3,p4,p5};
+	
+	for(Person p:array){
+		System.out.println(p)
+	}    
+   www.github.com     //各种源代码
+   海子博客园
+   Math.random      //求随机数的方法
+   
+   
+   10.13
+   static String Student{
+	   
+   }
+   
+   public static void haha(){}
+   
+   public static void main (String[] args){
+   new Test().haha; } //初始化只能用一次  
+   
+   
+   final Person p(0x123 p存放的是内存地址) = new Person();  //加final是指不能让p指向另一个对象了不能让p指向另一个对象了
+   p.setName("张三");
+   p.setAge("20");
+   p.setName("李四");
+   p.setAge("22");
+   
+   
+   abstract class Animal{           //抽象类
+   public abstract void eat();   //抽象类不能实例化，不允许创建抽象类本身的实例
+   }
+  
+  
+    //接口可以解决多重继承问题
+   interface Food{}
+   interface Guanshangpin{}
+   
+   class Animal{}
+   
+   class Fish extends Animal implements Food,Guanshangpin{}
+   class Panda extends Animal{}
+   
+   String str = "abc"
+   相当于
+   char data[] = {'a','b','c'}
+   String str = new String("abc");
+   
+   
+   10.15
+   //外部类和内部类出现了重名的成员
+   //外部类名.this.成员名
+   A a = new A();
+   B b = a.new B();
+   相当于  A.B b = new A().new B();
+   
+   内部类.变量名 = new 内部类（）；
+   
+   10.17
+   byte[]------->String  解码
+   String--------byte[]  编码
+   String s3 = "我爱你"
+   byte[] array= s3.getBytes（"GBK"）；
+   System.out.println(Array.toString(array));
+   
+   String s4 = new String(array,"GBK");
+   System.out.println(s4);
+   
+   String s5 = new String(new byte[]{97,98,99,100,101,102,103},2,4);
+   System.out.println(s5);
+   
+   //最原始的字符串拼接，会很浪费内存，效率很低
+    String------>StringBuffer (线程安全，效率低下)
+	
+	
+	10.18
+     //基本---->包装  装箱
+	 Integer c = Integer.valueof(10);
+	 //包装---->基本  拆箱
+	 int d = c.intValue();
+	 
+	 1.5以后   Integer e =100;   //自动装箱
+	            int f = e;        //自动拆箱
+				
+		int a = 1;
+		method(a);             //传进去的a不是int 类型 是integer类型
+  
+        Integer 范围-128到+127
+		double无范围
+		boolean 就两种情况
+		
+Math.random 这个随机数方法规定了出来的数左闭右开   0.0-1.0
+50-100  *51（*50的结果是0-50因为右开，取不到51）+50 
+40-100  *61+40  
+30-100  *71+30    *（100-30+1）+30
+0-100   *101   取不到101 
+
+		
+   10.22
+   //适合增删 尤其是头尾
+   class 链表{
+		节点的个数
+   
+		方法：添加头节点{
+	
+		判断是否是第一次添加头节点
+		如果是....
+		如果不是...
+   }
+   
+   //适合查改   class 节点{
+	当前节点的下一个节点
+   
+   
+   }
+   
+   10.23
+   //集合------------>数组
+	Object []  o = a.toArray();
+	//数组------------>集合
+	int [] array = {1,2,3,4,5}
+		for(int i = 0;i<array.length;i++){
+			c.add(array[i]);
+		}
+	
+	//集合遍历(通用)
+	Iterator i=list.iterator();  // 获得一个迭代子
+	
+	while(i.hasNext()){
+		Object o = i.next();  // 得到下一个元素
+		Hero hero = (hero)o;
+		System.out.println(hero);
+	}
+     //2
+	 for(int i=0;i < list.size();i++){
+		  Hero hero = (Hero) list.get(i);
+		  System.out.println(hero);
+	 }
+	 //3
+	 for(Object o: list){
+			Hero hero = (Hero) o;
+			System.out.println(hero);
+	 }
+	 
+	 
+	 
+	 
+    arrayList 是不同步的 
+	Vector  是同步的
+	
+	
+	10.24
+	public boolean equals(Object obj){
+	Student s = (Student)obj;
+	
+	return this.name.equals(s.name)&&this.age == s.age? true:false;
+	}
+	
+   
+   10.25
+   
+    public int hashCode(){
+	//return 1;
+	return 所有的属性的hashCode值相加;
+   
+	如何重写hashCode方法：在java.lang.Object中
+   
+   Collection 
+　　├List 
+　　│├LinkedList 
+　　│├ArrayList    
+　　│└Vector  
+　　│　└Stack 
+　　└Set 无序，不可重复   
+    TreeSet  有序，不可重复{
+     1、自然排序  升序，降序    ASCII   数字，英文大小写
+     2、定制排序（客户化排序）
+	   两种方法
+	   Comparable: 接口
+	   
+	   实现Comparable 接口，重写compareTo(Objcet o)（自然排序默认的方法） 方法
+	   
+	   Comparator: （比较器）： 接口
+   
+	   实例化一个Comparator接口的实现类的对象，重写compare(Objcet o1,Objcet o2)方法
+   
+	   
+　　Map 
+　　├Hashtable 
+　　├HashMap 
+　　└WeakHashMap 
+   
+   
+   
+   
+     10.26
+	 
+    Throw的两个分类：  error exception
+	   两个处理方法： 抛出  处理
+	   
+	try 发现异常
+	catch 捕获异常
+	
+	异常只能被一个异常处理器所处理, 不能声明两个
+	多个catch语句块所声明的异常类型不能越来越小；
+	
+	  try {
+                可能会出现异常情况的代码；
+            } catch(异常类型 异常参数) {
+                异常处理代码
+            } catch(异常类型 异常参数) {
+                异常处理代码
+            }finally{
+				任何情况下都必须执行的代码(除非在try和catch中调用了退出JVM的语句）
+			}
+	 常见的检查时异常:
+      IOException
+      ClassNotFoundException
+      DataFormatException		
+			
+	 1. java.lang.ArithmeticException  
+        算术异常	如：除0;
+     2. java.lang.NullPointerException  
+        空指针引用 如：没初始化一个References便使用;
+     3. java.lang.ArrayIndexoutofBoundsException  
+        数组越界	如：调用一个有十个元素的Array的第十一个元素的内容;
+     4. java.lang.SecurityException 
+        违反了java定义的安全规则
+     5. java.lang.NumberFormatException  
+        数据格式异常	如：Integer.parseInt("a");
+     6. java.lang.NegativeArraySizeException 数组长度为负数异常 
+	 
+	 
+	 10.31
+	   Object.wait(): 执行该方法的线程释放对象的锁，Java虚拟机把该线程放到该对象的等待池中。该线程等待其它线程将
+                             它唤醒；
+       Object.notify(): 执行该方法的线程唤醒在对象的等待池中等待的一个线程。Java虚拟机从对象的等待池中随机选择一
+                             个线程，把它转到对象的锁池中。如果对象的等待池中没有任何线程，那么notify()方法什么也不做。
+       Object.notifyAll()：会把对象的等待池中的所有线程都转到对象的锁池中。
+	 
+	 
+	 11.5
+	 
+	 new 包装流（节点流 比如OutputStream这样的）
+	 
+	 read(byte[] b)	 读一组
+	 read()			 读一个                                                                                      
+	 read(byte[] b ,int off,int len)  截取一部分读
+	 
+	 new 处理流（new 流（new 流））
+	 
+	 包装流：缓冲流（节省输入输出时间，提高系统效率）
+					BufferedInputStream    字节缓冲输入流   
+					BufferedOutputStream   字节缓冲输出流
+					BufferedReader		   字符缓冲输入流
+					BufferedWriter	       字符缓冲输出流
+					
+		     bos.frush()；刷新
+			 
+			 转换流： 只能把字节流转换成字符流   InputStreamReader     BufferedReader bfr 包装流
+			 打印流： 	 
+
+		properties 用于读取Java的配置文件
+    
+	Thread和Runable	
+
+	
+	如果一个类继承Thread，则不适合资源共享。但是如果实现了Runable接口的话，
+	则很容易的实现资源共享			
+	实现Runnable接口比继承Thread类所具有的优势
+	1）：适合多个相同的程序代码的线程取处理同一个资源
+	2）：可以比年java中的单继承的限制
+	3）；增加线程的健壮性，代码可以被多个线程共享，代码和数据独立
+	4）：线程池只能放入实现Runable或callable类线程，不能直接放入继承Thread的类
+	
+	1、wait和sleep和join区别
+
+sleep()：①是Thread类的方法,可以在任何地方使用
+
+         ②睡眠时，不释放锁，并且必须指定时间
+
+		 ③可以让当前线程进入阻塞状态，在指定时间内不会执行
+
+
+wait():  ①wait一般都是和notify或者notifyAll成对出现的，是Object类的方法
+
+		 ②wait和notify和notifyAll只能在同步（synchronized）控制方法或同步控制块里使用
+
+		 ③其他线程调用对象的notify方法前，导致当前线程等待，
+		   当前线程必须要有此对象的锁，否则会抛出运行时异常
+
+		 ④睡眠时，释放对象锁，可以指定时间也可以不指定
+
+	
+join():  ①是Thread类的方法
+
+		 ②因为join底层调用的是wait，所以会释放对象锁
+
+		 ③可以使异步执行的线程变成同步，让一个线程在另一个线程结束后再执行
+	
+	11.15
+	
+	W3C：世界万维网组织
+	浏览器只做解析，不做验证
+	有效一定良构，良构不一定有效。
+	浏览器是非验证解析器，不会校验xml文档的有效性，可以使用Eclipse去验证xml的有效性
+	   
+	11.16
+	table 整体往右移
+	按住shift 再按table 往左移
+
+
+	11.19
+	进入oracle: sqlplus 
+	进入mssql: mysql -uroot -proot
+	导入文件:start c:/summit2.sql
+	保存文件：save E:/a.txt
+	编辑文件：edit E:/a.txt
+	保存命令和表：spool E:/a.txt   结尾用spool stop
+
+	查询当前用户下有哪些表:select table_name 
+			    2  from user_tables;
+
+	查看表的结构：desc s_dept;
+
+	查询所有的列：SELECT * 
+		   2  from s_dept; 
+
+	查询所有的行：SELECT * 
+		   2  from s_emp;
+
+	清屏
+	clear screen;
+	清空缓冲区：clear buffer;
+	
+	nvl(commission_pct,1)
+	commission_pct如果为空，该函数处理的
+	结果就是后面设置的值
+	如果不为空，就是它本身的值
+
+	distinct:去除重复行
+
+
+	替换：
+	2  	先定位到错误的行
+	c/之前的名字/新名字
+	查看上次运行的sql语句：l  小写的L
+	执行上次的sql语句：/
+
+
+	追加  a，追加的内容
+
+	删除某一行：del
+	先定位到你要删除的行  1/2
+	del
+
+
+	先定位到要插入语句的行，插入在该行下面
+	i 插入的内容
+
+	i where dept_id=42;
+
+	order by  升序   asc （可省略）  空位于最后面
+	desc 降序  空排在最前面
+	
+	加引号里面的东西 大小写敏感
+
+	查看系统时间的格式
+	select sysdate from dual;
+	将系统时间改为英文的格式
+	alter session set nls_date_language=english;
+	
+	and优先级比or高 ，可以用（）改变
+
+	select to_char(salary,'L99,999.99') from s_emp; 转货币单位
+
+	
+	select e.last_name,d.name
+	from s_emp e,s_dept d
+	where e.dept_id = d.id;    起别名
+
+	
+	select trunc(to_date('25-may-95'),'month') from dual;     判断年月进位，要转换成日期格式
+
+	count(*)将返回表格中所有存在的行的总数包括值为null的行，
+	然而count(列名)将返回表格中除去null以外的所有行的总数(有默认值的列也会被计入）.
+
+	使用 group by 子句、where 子句和分组函数有以下一些注意事项：
+
+????1、分组函数只能出现在选择列表、having 子句和 order by 子句中
+
+????2、如果在select 语句中同时包含 group by 、having 以及 order by 子句，则必须将 order by 子句放在最后。默认情况下，当使用 group by 子句统计数组时，会自动按照分组列的升序显示统计结果。通过使用 order by 子句，可以改变数据分组的排序方式。
+
+????3、SELECT子句中的列或者是表达式如果没有包含在组函数里，则一定要包含在GROUP BY子句里，否则会显示错误消息。
+
+????4、当限制分组显示结果时，必须要使用 having 子句，而不能在 where 子句中使用分组函数限制显示结果，否则会显示错误信息。
+
+    5、WHERE子句和GROUP BY 子句中不能使用别名
+	
+    6、使用了GROUP BY子句后如果还想进行条件过滤，则需使用HAVING子句。
+	 
+	having和where的区别：
+	①where子句只能接收from子句输出的数据，
+	而having子句则可以接受来自group?by，where或者from子句的输入
+	②WHERE 后面的条件中不能有聚集函数，比如SUM(),AVG()等，而HAVING 可以
+	③where自居仅仅用于从from子句中返回的值，from子句返回的每一行数据都会用where子句中的条件进行判断筛选。
+	  where子句中允许使用比较运算符（>,<,>=,<=,<>,!=|等）和逻辑运算符（and，or，not）。
+	④having子句通常是与group/order by 子句一起使用的。不能单独使用
+	  因为having的作用是对使用group by进行分组统计后的结果进行进一步的筛选
+
+查询工资大于smith所在部门平均工资的员工的信息
+select last_name,salary
+from s_emp
+where salary > (select avg(salary)
+	from s_emp
+	where dept_id = (
+		select dept_id
+		from s_emp
+		where last_name = ‘smith’));
+
+
+	返回多行值 用in  效率低
+    返回单行值  用 =  
+
+	
+	set verify on/off  开启/关闭 原值和新值的提示
+	accept column_name prompt'please coluName:';   //把column_name 重新赋值
+
+	alter table tset drop column id; //删除列
+	
+	修改属性
+	alter table tableName
+    modify (columnName datatype
+	[default expr][not null])
+	
+	增加约束
+	ALTER TABLE	tableName
+	ADD constraint   test_name_uk;
+	type (column);
+	
+	//删除约束
+	alter table 表名
+	drop constraint test_name_uk；
+	
+	cascade级联  添加cascade表明要让所有的依赖约束都失效
+	
+	
+	//删除约束
+alter table insert_test2
+drop constraint test_name_uk
+//使约束失效disable
+alter table insert_test2
+disable constraint test_name_uk
+//使约束生效enable
+alter table insert_test2
+enable constraint test_name_uk
+	
+	增加注释：
+COMMENT ON TABLE 表名 
+IS '...';
+
+查询用户增加的注释
+select comments
+from USER_TAB_COMMENTS
+where table_name='INSERT_TEST2';
+
+序列使用前必须进行初始化
+
+创建视图需要权限
+conn system/密码   //切换用户
+show user
+grant create view to 用户名
+conn 用户名/密码
+
+主函数要起别名
+
+revoke create session from briup //撤销权限
+
+revoke ect on t from lwl
+
+创建同义词：相当于起别名
+create synonym emp for s_emp;
+删除同义词：
+drop synonym emp;
+//给起同义词授权
+grant create synonym to oracle; 
+
+
+statement和preparestatement的区别：
+             效率高，支持预编译
+
+			 
+ 12.10
+ tomcat采用反射的方式，创建这个类的对象
+ 
+ package com.briup.test;
+ 
+ public class HelloWorld{
+	 public void  sayHello(){
+		 System.out.println("hello world")
+	 }
+	 
+ }
+ 
+ 
+ 12.11
+ 1、 什么是servlet
+  本质上就是一个Java类，
+  这种类可以提供web形式的访问（Java EE 规范中定义的）
+ 2、 怎么按照JavaEE规范编写一个servlet
+     Servlet		  接口		有五个抽象方法
+	GenericServlet	  抽象类	有一个抽象方法
+	HttpServlet	  抽象类	没有抽象方法
+	
+	HttpServlet继承了GenericServlet类 这个类又实现了Servlet接口
+  所以创建一个servlet  三种方式：
+  实现接口        servlet
+  继承抽象类      GenericServlet  直接继承父类
+  继承             HttpServlet     最常用的
+  
+  3、 生命周期
+ 默认情况下，在web项目运行期间，一个servlet只会创建一次对象，由tomcat服务器创建
+ <load-on-startup>  表示servlet需要在启动tomcat的时候被创建
+ 
+  4、 servlet对象被销毁的情况
+		服务器【正常】关闭的时候
+		服务器重新加载web项目的时候(reloading)
+		
+  5、 servlet接口中的五个方法
+   
+		
+	//初始化servlet对象的时候被调用
+	void 	init(ServletConfig config)
+
+	//销毁servlet对象的时候被调用
+	void 	destroy()
+
+	//访问servlet对象的时候被调用
+	void 	service(ServletRequest req, ServletResponse res)
+	
+	//返回servlet相关信息,比如作者、版本、版权等
+	//父类中(GenericServlet)默认返回一个空字符串 ""
+	//如果需要的话,程序员可以自己重写这个方法
+	String 	getServletInfo()
+
+	//返回ServletConfig对象
+	ServletConfig 	getServletConfig()
+
+
+ 
+ 6、 ServletConfig接口中的方法(共有四个方法)
+ ServletConfig接口的实现类对象,表示一个servlet在web.xml文件中的配置信息
+ 
+ //获取当前servlet在web.xml中配置的名字,也就是<servlet-name>这个标签中的值
+ String getServletName  
+  
+  //根据参数名获取初始化参数的值
+  ////在web.xml可以通过<init-param>标签给servlet传参
+ String getInitParameter(String name)  
+ 
+ // 获取代表当前应用的servletcontext对象
+ ServletContext 	getServletContext()  
+ 
+ //获取当前servlet所有初始化参数的名字组成的枚举
+ Enumeration  getInitParameterNames()
+ 
+ 在doget和dopost里面任选一个写代码。在另一个里面调用另一个的方法
+ 
+  7、  servlet的访问
+	使用web.xml文件的这个<url-pattern>标签中的映射路径,来访问servlet
+
+	①在浏览器的地址栏中,直接输入servlet映射的路径来访问
+	这时候是get方式的访问,servlet中的doGet方法最终会被调用
+	
+	②在页面中,可以使用超链接来访问servlet
+	这时候是get方式的访问,servlet中的doGet方法最终会被调用
+
+	③在页面中,可以使用表单发送请求去访问servlet
+	这时候默认情况下是get方式访问,但是可以通过表单里的属性值进行设置为get或者post方式
+
+	④将来还可以使用javascript或者在ajax中发请求访问servlet,这个时候也可以进行设置使用get方式还是post方式进行访问servlet
+
+ 12.12
+  put（增） delete（删）  post（改）  get（查）
+  method = “post”
+  
+  get和post的区别
+  GET /test
+  
+  响应状态行
+  响应头
+  \r\n
+  响应正文
+  
+  客户端查重定向
+  response.sendRediect 
+ 
+ 
+  12.17
+  指令包含page include taglib三种
+  
+  一个页面包含/引入另外一个页面有俩种方式:静态包含 动态包含。
+		这个include指令就属于静态包含
+		
+静态包含特点:例如a.jsp页面中静态包含了b.jsp页面,
+那么在翻译期间,jsp引擎在翻译a.jsp成为一个a_jsp.java文件的时候,
+发现jsp页面中有include指令,这时候jsp引擎就会把被包含的页面b.jsp中
+内容原封不动的拿到a_jsp.java中,然后用io输出出去.
+  
+  
+动态包含特点:在把jsp文件翻译成java文件的期间,
+动态包含并不会去把被包含的页面原封不动的拿过来,
+而是会把动态包含这个标签翻译成一个方法的调用,
+将来运行页面调用到这个方法的时候才会去拿被包含页面的内容.
+同时还可以给动态包含的页面传参数.静态包含是不能传参数的。 
+ 
+ 
+ 12.19
+ 必须的步骤：
+InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); 
+SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		
+SqlSession session = sqlSessionFactory.openSession();
+ 
+ 使用Mybatis需要：
+			jar(提供mybatis框架的核心功能)
+			配置文件(提供连接数据库的信息)
+			映射文件(提供要执行的sql语句，同时每个sql语句都有一个id值，为了方便调用)
+			映射接口(通过xml文件中的namespace和映射文件相对应，接口中的方法和sql语句的id必须是一致的)
+			session对象(在代码运行期间，动态产生映射接口的实现类对象)
+
+ 
+2019. 1.2
+   接口可以继承，也可以实现
+
+1.3
+只有在同一块内存地址 形参的改变才会影响实参
+基本数据类型下，形参的改变一定不会影响实参
+	
+	
+	
+3.4
+IOC 管理对象生命周期 
+AOP 变相切面编程
+
+<mvc:resources mapping="/images/**" location="/images/"/>  
+<mvc:resources mapping="/js/**" location="/js/"/>  
+<mvc:resources mapping="/css/**" location="/css/"/> 
+
+3.5
+//把当前页面内容打印到网页上
+PrintWriter pw = response.getWriter();
+			pw.println("hello");
+			pw.flush();
+
+错误405  访问的请求方式不被支持  
+
+
+概述mvc架构和三层架构的区别
+
+①三层架构是一种大的架构,mvc是三层架构的一种实现模式
+
+②三层架构就是将整个业务应用划分为：表现层（UI）、业务逻辑层（BLL）、数据访问层（DAL）。
+
+③MVC指的是 Model-View-Controller，其实把三层架构中的UI层再度进行了分化
+
+前台传数据的方式
+1、表单
+2、url
+3、ajax（）
+页面跳转
+1、超链接（不携带数据）
+2、action form js
+
+ 1/*  是指获取到一级请求 /**是指二三级的请求子目录下的所有                                        **/             
+ 
+3.7
+#{user.get()?.toUpperCase()}  //全部转换成大写
+
+1、url路径映射
+   提供了4种方法
+   1）普通的映射    （"/xxx/xxx/xx")
+   2）模板映射      ( "/xxx/{userID}")   {}代表了占位符
+   3）Ant风格的URL路径映射   /test/*  只匹配一级目录
+							   /test/**  匹配所有
+							   
+	*/ 						   
+   4）正则表达式     用来匹配字符串的
+  
+     手机：
+	    位数：11位   //d{9}
+		第一位 1
+		第二位 [3-9]
+		     ^1[3-9]//d{9}$
+	 邮箱：
+	  6-18个字符，可使用字母、数字、下划线，需以字母开头
+	    xxx@xx.com
+		
+	^[a-zA-Z]([a-z]|[A-Z]|[0-9])
+
+3.8
+一般获取数据为GET请求方法,提交表单一般为POST请求方法。
+
+1.ajax请求发送的时候要指定为post方式
+2.ajax请求发送的时候要指定contentType:"application/json"
+3.ajax请求发送的时候要把json对象转换为字符串再发送
+4.Controller中要使用@RequestBody指定接收数据的参数
+5.Controller中的方法要返回json格式的数据给客户端,
+
+
+3.14
+JSP里面  <%--  --%> 注释
+
+3.18
+设置键值对操作 set name briup
+		取出键值对操作 get name
+		
+3.19
+
+1、使用API来操作redis
+    redis借助方法来操作
+		方法名和命令同名
+2、使用mybatis和redis结合    简单
+
+  其实就是redis作为mybatis的二级缓存
+  一级缓存：
+  二级缓存：
+		自己实现一个缓存处理类实现catch
+		
+3、使用spring和redis结合  更简单 
+   catch
+
+
+创建JedisPool
+		JedisPool pool = new JedisPool();
+		或者
+		JedisPool pool = new JedisPool("127.0.0.1",6379);
+		或者
+		JedisPoolConfig config = new JedisPoolConfig();  
+		
+对象------------->byte[]	保存到redis
+对象一定要支持序列化
+
+ByteArrayOutputStream() bos
+
+ObjcetOutputStream(bos)  oos
+
+oos.writeObject(oos)
+
+byte[] b = bos.tobyteArray()
+
+
+
+byte[]------------->对象
+
+ByteArrayInputStream(byte[] b)  bis
+
+ObjectInputStream(bis) ois
+
+Object o = ois.readObject();
+
+
+
+二级缓存以namespace名称空间为其唯一标识，被保存在Configuration核心配置对象中。
+
+
+3.20
+
+springboot
+
+3.21
+约定优于配置
+
+url：面向资源的url
+
+get 
+	/users/1
+
+delete（删）
+	/users/1
+
+update：Post： 
+	/users
+
+put:
+	/users
+
+	
+以后用springboot-web   的要在Maven里面删掉hibernate-validator这个包  （右键选maven  第三个）
+在application.properties里面改端口号：
+server.port=8082
+
+
+默认走最大的工程 里面的/注解
+如果配了下面这句话，指定了工程名里面的/注解
+server.context-path=/工程名
+
+
+
+关于 web 项目在 springboot 中的运行 :  
+1. 直接用运行 java 的方式运行 springboot 项目的程序入口 
+2. 使用 springboot 的 maven 插件来运行 springboot 项目  
+3. 把项目打成 jar 包，用 java 的命令来运行 
+4. 把项目打成 war 包，部署到外部的 tomcat 服务器内运行
+
+
+3.22
+assert  断言
+
+数据持久化
+JPA：在javaEE中是一个规范，对持久化做了一个规范
+
+springdata JPA ：  是一个产品，是一个ORM框架
+1、实体类和表的对应关系
+2、实体类中的属性和表中的字段对应
+3、实体类和实体类之间的关系
+
+
+3.25
+大前端（PC，Android，iOS，大屏） 桌面软件 VR
+
+3.26
+wrap_content  自己设置多大 显示多大     自身适应
+match_parent  充满父窗体
+
+1、设置阴影
+android:shadowColor="#ff0000"//阴影颜色
+        android:shadowDx="20"//y轴偏移量
+        android:shadowDy="20"//x轴偏移量
+        android:shadowRadius="1"//模糊程度，越大越模糊
+		
+2、  android:gravity="center"   居中
+    android:singleLine="true"  内容超出一行显示...
+
+	android:focusable="true"	触摸事件 两个连用
+	android:focusableInTouchMode="true"  
+
+3.shape的文件使用
+corners 元弧度
+ solid 填充色
+gradient 渐变色 
+stroke   边框   
+<RadioGroup  单选框
+<CheckBox    多选框
+
+4、 Selectors文件属性
+属性介绍：
+android:state_selected选中
+android:state_focused获得焦点
+android:state_pressed点击
+android:state_enabled设置是否响应事件,指所有事件
+
+5.ImageView
+
+6.ImageButton的使用
+
+7.EditText的使用
+
+8.<RadioGroup  单选框
+
+9.<CheckBox    多选框
+
+10.ProgressBar 进度条
+
+
+
+五大布局
+Android中常用的五种布局方式
+——----------FrameLayout	  帧布局    
+ 
+——---------LinearLayout    线性布局  
+
+horizontal 水平排列
+vertical  垂直排列
+权重ndroid:layout_weight="1"   宽度/高度 需为0dp   另一个自适应
+ 
+——------------RelativeLayout  相对布局
+
+第一类：属性值为true或false
+ android:layout_centerInParent="true"  父窗体中央
+ android:layout_centerHorizontal="true"  父窗体水平中央
+ android:layout_centerVertical="true"   父窗体竖直中央
+ android:layout_alignParentLeft="true"    紧贴父窗体左边缘
+ android:layout_alignParentBottom="true"  紧贴父窗体下边缘
+ 
+第二类：属性值必须是id的引用名
+ android:layout_below="@+id/btn1"  在某元素的下边
+ android:layout_alignLeft="@id/btn1"  以某元素左对齐
+ android:layout_above="@+id/btn1"   在某元素的上边
+ 
+ android:layout_toRightOf="@id/btn1"  在某元素的右边
+ android:layout_alignTop="@id/btn1"   上对齐  可以两个连用
+
+第三类：属性是像素值
+  android:layout_marginLeft="20dp"  离某元素的外边距  以当前写的按钮为中心
+ android:paddingTop="20dp"   内边距
+ 
+——----------------GridLayout
+
+
+——----------------TableLayout(表格布局)
+
+
+
+点击事件的常用两种方式
+第一种点击方式
+匿名内部类
+第二种点击方式
+实现接口
+
+
+3.27
+1、
+
+3.28
+Intent意图
+
+内部意图例如拨打电话
+intent.setAction(Intent.ACTION_CALL);
+               intent.setData(Uri.parse("tel:"+10010));
+               startActivity(intent);   //跳转   //启动意图
+
+外部意图例如跳转
+Intent intent = new Intent(IntentActivity.this,indexActivity.class);
+        intent.putExtra("name",name);
+        intent.putExtra("pwd",pwd);
+        startActivity(intent);
+
+activity生命周期
+
+listView的使用   一个条目一个条目的  整体视图
+
+mvc
+
+Gridview的使用  网格布局
+和listView的使用 基本一样
+
+
+音乐播放的使用
+
+
+3.29
+安卓测试语句
+log.d（tag“haha”“1231321123”）
+
+无线测试
+adb connect IP地址
+
+4.2
+元素：   <div>hello</div>     开始+内容+结束标签 统称元素
+img既不是行内元素也不是块级元素
+
+4.3
+进度条：<progress min="0" max="100" value="10" name="progress"></progress>
+		<br />
+		<!-- 如果没有最优值，在low和high之间是绿色，其他是橙色 -->
+		磁盘容量：<meter max="100" low="40" high="60" value="80"></meter>
+		<br />
+		<!-- 如果最优值小于low,low以下的值绿色，low和high之间橙色，high以上的值红色 -->
+		磁盘容量：<meter max="100" low="40" high="60" optimum="20" value="80"></meter>
+		<br />
+		<!-- 如果最优值大于high,大于high的是绿色，low和high之间的是橙色，小于low的是红色 -->
+		磁盘容量：<meter max="100" low="40" high="60" optimum="80" value="20"></meter>
+		<!-- 如果最优值在low和high之间，情况跟没有最优值一样 -->
+		磁盘容量：<meter max="100" low="40" high="60" optimum="50" value="80"></meter>
+		<br />
+
+
+JS可以做服务器端开发 但是是运行在操作系统上的
+
+StarUML
+
+
+腾讯云 
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://139.199.124.20:3306/yunDB
+useUnicode=true&characterEncoding=UTF-8
+spring.datasource.username=root
+spring.datasource.password=root
+server.port=8888
+mybatis.mapper-locations= classpath:/mapper/**/*.xml 
+
+
+
+老师的
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://134.175.154.93:3306/course
+spring.datasource.username=root
+spring.datasource.password=briupSH123
+server.port=8888
+mybatis.mapper-locations= classpath:/mapper/**/*.xml 
+
+
+2015年6月 ECMASript 正式通过
+
+
+
+5.14
+React
+let arr = [1,2,3];
+let arr2 = [4,5,6];
+
+let c = [...arr,...arr2];
+
+let c = [1,2,3,4,5,6]
+
+
+git 配置文件
+[remote "origin"]
+	url = https://github.com/yltx0906/react.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

@@ -1,0 +1,57 @@
+在C盘输入
+下载或者更新包
+npm install -g create-react-app     
+
+在想要创建的目录里创建React项目 
+create-react-app app01
+
+在项目目录里输入   启动项目
+npm (run) start / yarn start  
+
+
+
+在终端里安装和引入一些常用组件的依赖
+-------------------------------------
+1、yarn add jquery
+-------------------------------------
+安装路由  处理Web浏览器界面上的路由跳转
+2、yarn add react-router-dom
+
+-------------------------------------		
+安装
+  ant design 组件库应用
+3、yarn add antd
+	
+-------------------------------------
+安装第三方库,用于自定义配置
+		
+4、yarn add react-app-rewired
+	
+5、yarn add customize-cra 
+安装用于按需加载组件代码和样式的 babel 插件 
+		
+6、yarn add babel-plugin-import
+修改package.js脚本设置
+	"scripts": {
+	"start": "react-app-rewired start",
+	"build": "react-app-rewired build",
+ 	"test": "react-app-rewired test",
+	"eject": "react-app-rewired eject"
+7、yarn add less less-loader
+-------------------------------------
+8、yarn add axios
+9、yarn add redux react-redux
+10、yarn add lodash
+11、yarn add redux-thunk
+12、yarn add redux-saga
+
+
+-------------------------------------
+
+
+杀手锏：
+ 1.  npm init -f //初始化文件
+ 2.  npm install bluebird -save
+
+
+

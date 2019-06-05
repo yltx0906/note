@@ -1,0 +1,44 @@
+1、 配置Android所需要的环境变量
+新建：ANDROID_HOME  
+E:\AndroidSDK\Sdk   （SDK安装路径）
+  
+ 在path里 配置:
+E:\AndroidSDK\Sdk\tools;      //配置SKD
+E:\AndroidSDK\Sdk\platform-tools;  //配置SKD
+2、配置Tomcat所需要的环境变量
+新建： CATALINA_HOME
+E:\tomcat\Apache Software Foundation\Tomcat 9.0 （安装路径）
+
+TOMCAT_HOME
+E:\tomcat\Apache Software Foundation\Tomcat 9.0
+ 
+CLASSPATH
+.;CATALINA_HOME%\lib\servlet-api.jar
+3、配置Java所需要的环境变量
+新建 JAVA_HOME
+E:\Java\jdk1.8.0_74
+
+CLASSPATH  里面加个点.
+Path里加下面这句话
+%JAVA_HOME%\bin; 
+5、配置Maven仓库所需要的环境变量
+新建  MAVEN_HOME
+E:\apache-maven-3.3.9
+Path里配置：
+%MAVEN_HOME%\bin;				//配置maven仓库
+   
+6、目前Path里所配的
+%JAVA_HOME%\bin;   （放在最前面防止更新不了JDK版本）
+E:\oraclexe\app\oracle\product\10.2.0\server\bin;
+C:\ProgramFiles(x86)\CommonFiles\Oracle\Java\javapath;
+%SystemRoot%\system32;
+%SystemRoot%;
+%SystemRoot%\System32\Wbem;
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;
+%MAVEN_HOME%\bin;				//配置maven仓库
+%CATALINA_HOME%\bin;        //配置tomcat
+F:\MySQL\bin;                 //配置Oracle
+E:\AndroidSDK\Sdk\tools;      //配置SKD
+E:\AndroidSDK\Sdk\platform-tools;  //配置SKD
+C:\Program Files\PuTTY\;     //配置腾讯云服务器
+E:\;                     //配置node

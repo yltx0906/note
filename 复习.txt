@@ -1,0 +1,715 @@
+第一章：Java的基本介绍
+现阶段java的开发版本  javase(Corejava,基本应用)  javaee(企业版开发，GUI,javaweb,html,java的三大框架)
+ jame（微缩版，针对移动设备包括嵌入式的元件）
+ 
+java之父：詹姆斯·高斯林
+
+java面向对象、面向过程：
+面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，
+使用的时候一个一个依次调用就可以了。     C语言
+
+面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，
+而是为了描叙某个事物在整个解决问题的步骤中的行为。    java c++ 
+
+java运行需要的环境：jdk(jre(jvm)
+jdk：运行工具  java开发工具包，是整个java核心，包括了java运行环境 jdk里很多exe需要jre支持
+jre：基本类库 运行环境
+jdk的包有什么  java.lang   java.util
+
+环境变量 JAVA_HOME JDK安装目录
+ classpath    .    %JAVA_HOME%/lib/tools.jar
+ path：可执行文件  %JAVA_HOME%/bin
+ 
+jdk1.5之后，只需要指定bin目录的位置就可以了
+
+JDK中包含JRE，在JDK的安装目录下有一个名为jre的目录，里面有两个文件夹bin和lib，
+在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，
+而jvm和 lib和起来就称为jre。
+
+jvm： java虚拟机，是JRE的一部分，是一个虚拟出来的计算机，
+是通过在实际计算机上仿真模拟各种计算机功能来实现的，
+JVM有自己完善的硬件架构，如处理器，堆栈，寄存器等，还具有相应的指令系统。
+提供的一些机制：
+1、字节码校验器：需要叫个jvm去处理执行java文件
+
+java文件编译后就会生成.class文件(即字节码文件),然后编译器加载这个字节码文件，
+类加载器按类名加载文件中的类，执行入口main方法。
+
+字节码：语法是否规范，代码是否合规，是否栈溢出,变量要在使用之前进行初始化
+2、垃圾回收机制： 清除不再使用的对象,释放垃圾占用的空间
+
+平台无关性:java写的程序不用修改就可以在不同的软硬件平台上运行
+
+
+第二章：
+标识符： 自定义的类、方法、变量的名字
+关键字：系统提供的类、方法、变量、接口等实现功能的名字
+
+标识符的规则：以字母、_和$开头，不能以数字和关键字开头，区分大小写
+关键字：
+
+注释：
+
+变量：
+分类:按照作用域分类：局部变量和全局变量
+按照数据类型分类：基本类型变量和引用类型变量
+
+引用数据类型和基本数据类型的区别：
+
+引用数据类型：类，接口，自定义的数组
+
+第三章：流程控制（判断、循环）
+
+判断的语法：两种
+if  else
+
+if （）{}else if（）{}  else
+
+switch（a） case 0 case1 case2
+
+循环的语法：三种
+for（初始化语句；判断条件语句（最大范围）；循环频率）
+{循环体}
+while（循环条件）{循环体}
+do{循环体}while（循环条件）
+
+
+操作符：
+位移操作符：操作的是二进制
+无符号位移：>>>右移  <<左移
+>>有符号右移
+
+int类型十进制转二进制是怎么位移的：
+00000000 00000000 00000000 00001010
+&
+00000000 00000000 00000000 00000001
+=
+00000000 00000000 00000000 00001010
+for(i=31;i>0;i--)  //倒序
+{
+	int a;
+	a=B(原来的数)>>i;
+	a=a&1;
+}输出a
+相同为假，不同为真
+
+
+第四章：数组
+数组的定义：
+数组的声明：数据类型[] 数组名 = new 数据类型 [数组长度]；
+数组的遍历：数组a
+for(int i=0;i<array.length;i++)	 
+	   System.out.println(i);  
+数组方法：拷贝数组
+  system.arraycopy
+  for循环
+
+
+第五章：构造器
+属性、方法，构造方法（构造器）
+
+int 默认是0  double 是0.00  引用数据类型是null
+
+一个方法中可以有多个构造器，要看成员变量的数量
+
+默认类是Object,里面的方法有toString
+
+任何类都有一个默认的构造器，是一个无参构造器
+
+类只涉及定义，不涉及任何执行，用测试类或者用对象来执行
+
+this: 本类的引用
+super：父类的引用
+
+public  类内（同包同类）  同包不同类   子类  其他类   都能用
+
+Math.random 这个随机数方法规定了出来的数左闭右开   0.0-1.0
+50-100  *51（*50的结果是0-50因为右开，取不到51）+50 
+40-100  *61+40  
+30-100  *71+30    *（100-30+1）+30
+0-100   *101   取不到101 
+
+jdk1.5的新特性：
+一：自动装箱和自动拆箱~
+————————————————————————————————————
+1）装箱和拆箱
+装箱：把基本数据类型转化为类类型
+拆箱：把类类型转化为基本数据类型
+java的数据类型分为基本数据类型和引用数据类型。java是面向对象的语言，所以Java就希望
+并且要求java中操作的都是对象。所以所有的基本数据类型都对应一个包装类。
+基本数据类型：byte,short,int,long,float,double,boolean,char
+引用数据类型：类类型，接口类型，数组类型
+包装类：Byte,Short,Integer,Long,Float,Double,Boolean,Character
+2)如何进行装箱和拆箱
+数值类：Byte,Short,Integer,Long,Float,Double
+
+
+TreeMap和TreeSet分别实现Set和Map接口
+
+TreeSet：只存储一个对象，有序且不能重复，是一个数组型的集合，内部有特定的排序方法
+TreeMap：存储两个对象(key,value)，有序可以重复，实现通过红黑树
+并且TreeSet底层是通过TreeMap来实现的，如同HashSet底层是通过HashMap来实现的一样
+
+优先级：静态代码块>匿名代码块（非静态代码块）>构造器
+
+如果后减前大于0  -1  交换位置   降序
+    前减后小于0  1   不交换位置  升序
+
+
+变态题
+
+
+socket里面定义的 InputStream  OutputStream
+
+服务器：输入流：从客户端拿来的socket的数据
+		输出流：输出到相应的文件
+
+端口号 65536 范围0-655635  前1024被占用
+
+char默认值 \u0000
+
+java采用unicode,2个字节（16位）来表示一个字符
+
+
+一个字母=一个字节  一个汉字=一个字符=2个字节
+
+
+1字节： byte , boolean    8bit 可表达 2的八次方个数字     默认值0
+2字节： short , char	  16bit 可表达2的十六次方个数字
+4字节： int , float       32bit
+8字节： long , double	  64bit
+注：1字节(byte)=8位(bits)
+默认值：
+boolean   false
+char	  '/uoooo'(null)
+byte	  (byte)0
+short	  (short)0
+int	      0
+long	      0L
+float	      0.0f
+double	      0.0d
+
+多线程和多进程的区别：
+
+进程是程序执行的一个实例
+
+
+使用 group by 子句、where 子句和分组函数有以下一些注意事项：
+
+	1、分组函数只能出现在选择列表、having 子句和 order by 子句中
+
+	2、如果在select 语句中同时包含 group by 、having 以及 order by 子句，则必须将 order by 子句放在最后。默认情况下，当使用 group by 子句统计数组时，会自动按照分组列的升序显示统计结果。通过使用 order by 子句，可以改变数据分组的排序方式。
+
+	3、SELECT子句中的列或者是表达式如果没有包含在组函数里，则一定要包含在GROUP BY子句里，否则会显示错误消息。
+
+	4、当限制分组显示结果时，必须要使用 having 子句，而不能在 where 子句中使用分组函数限制显示结果，否则会显示错误信息。
+
+    5、WHERE子句和GROUP BY 子句中不能使用别名
+	
+    6、使用了GROUP BY子句后如果还想进行条件过滤，则需使用HAVING子句。
+	 
+	having和where的区别：
+	①where子句只能接收from子句输出的数据，
+	而having子句则可以接受来自group?by，where或者from子句的输入
+	②WHERE 后面的条件中不能有聚集函数，比如SUM(),AVG()等，而HAVING 可以
+	③where自居仅仅用于从from子句中返回的值，from子句返回的每一行数据都会用where子句中的条件进行判断筛选。
+	  where子句中允许使用比较运算符（>,<,>=,<=,<>,!=|等）和逻辑运算符（and，or，not）。
+	④having子句通常是与group/order by 子句一起使用的。不能单独使用
+	  因为having的作用是对使用group by进行分组统计后的结果进行进一步的筛选
+	  
+	  
+ 12.11
+ 1、 service(ServletRequest req,ServletResponse res)
+	{
+		service(HttpServletRequest()req,HttpServletResponse(res)){
+			doget/dopost
+		}
+	 
+	}
+ 2、 service(HttpServletRequest request,HttpServletResponse response)
+   
+ 
+  怎么创建一个servlet  三种方式：
+ 1、 实现接口        servlet
+ 2、 继承抽象类      GenericServlet  直接继承父类
+ 3、 继承             HttpServlet     最常用的
+ 
+ 4、 doxxx
+       doget/dopost/dodelete
+ 
+ 
+ create table books(
+      id number PRIMARY KEY,
+	  bookName varchar2(50),
+	  author varchar2(50),
+	  publishDate date,
+	  price number(9,2)
+ 
+ )
+ //计算总耗时
+ long start = System.currentTimeMillis();
+ local.set(start);
+ long end = System.currentTimeMillis();
+		System.out.println("共耗时:" + (end - local.get()));
+ 
+ 
+ 
+ 
+html转JSP 要加这两句话
+开头加
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() 
+
++ ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<head>下面加
+<base href="<%=basePath %>">
+
+
+改表单的时候在<tbody>下面写
+例如：
+<c:forEach items="${users }" var="user" varStatus="status" >
+    <tr>
+      <td>${status.index+1 }</td>
+      <td>${user.usr_name }</td>
+      <td>${user.usr_role_name }</td>
+     <c:if test="${user.usr_flag == 1}">
+      <td>正常</td>
+     </c:if>
+     <c:if test="${user.usr_flag == 0}">
+      <td>注销</td>
+     </c:if>
+ 
+ 
+原子性是单个的一致性
+一致性是多个的一致性
+ 
+ 
+对象------------->byte[]	保存到redis
+对象一定要支持序列化
+
+ByteArrayOutputStream() bos
+
+ObjcetOutputStream(bos)  oos
+
+oos.writeObject(oos)
+
+byte[] b = bos.tobyteArray()
+
+
+
+byte[]------------->对象
+
+ByteArrayInputStream(byte[] b)  bis
+
+ObjectInputStream(bis) ois
+
+Object o = ois.readObject();
+
+
+ 
+在application.properties里面改端口号：
+server.port=8082
+
+
+80    apache  静态服务器（html）
+8080  tomcat  动态服务器（jsp）
+3306  myspq   数据服务器
+443
+22
+8888
+
+
+Android安装配置
+1、JDK
+2、SDK
+    ANDROID_HOME sdk安装目录
+	Path %ANDROID_HOME%/platform-tools
+		 %ANDROID_HOME%/tools
+	
+3、adb  
+	Android Debug Bridge   安卓调试桥
+	adb devices  展示连接列表
+	adb kill-server 删除所有已连接的设备
+	
+	
+		
+
+第一章：Java的基本介绍
+现阶段java的开发版本  javase(Corejava,基本应用)  javaee(企业版开发，GUI,javaweb,html,java的三大框架)
+ jame（微缩版，针对移动设备包括嵌入式的元件）
+ 
+java之父：詹姆斯·高斯林
+
+java面向对象、面向过程：
+面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，
+使用的时候一个一个依次调用就可以了。     C语言
+
+面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，
+而是为了描叙某个事物在整个解决问题的步骤中的行为。    java c++ 
+
+java运行需要的环境：jdk(jre(jvm)
+jdk：运行工具  java开发工具包，是整个java核心，包括了java运行环境 jdk里很多exe需要jre支持
+jre：基本类库 运行环境
+jdk的包有什么  java.lang   java.util
+
+环境变量 JAVA_HOME JDK安装目录
+ classpath    .    %JAVA_HOME%/lib/tools.jar
+ path：可执行文件  %JAVA_HOME%/bin
+ 
+jdk1.5之后，只需要指定bin目录的位置就可以了
+
+JDK中包含JRE，在JDK的安装目录下有一个名为jre的目录，里面有两个文件夹bin和lib，
+在这里可以认为bin里的就是jvm，lib中则是jvm工作所需要的类库，
+而jvm和 lib和起来就称为jre。
+
+jvm： java虚拟机，是JRE的一部分，是一个虚拟出来的计算机，
+是通过在实际计算机上仿真模拟各种计算机功能来实现的，
+JVM有自己完善的硬件架构，如处理器，堆栈，寄存器等，还具有相应的指令系统。
+提供的一些机制：
+1、字节码校验器：需要叫个jvm去处理执行java文件
+
+java文件编译后就会生成.class文件(即字节码文件),然后编译器加载这个字节码文件，
+类加载器按类名加载文件中的类，执行入口main方法。
+
+字节码：语法是否规范，代码是否合规，是否栈溢出,变量要在使用之前进行初始化
+2、垃圾回收机制： 清除不再使用的对象,释放垃圾占用的空间
+
+平台无关性:java写的程序不用修改就可以在不同的软硬件平台上运行
+
+
+第二章：
+标识符： 自定义的类、方法、变量的名字
+关键字：系统提供的类、方法、变量、接口等实现功能的名字
+
+标识符的规则：以字母、_和$开头，不能以数字和关键字开头，区分大小写
+关键字：
+
+注释：
+
+变量：
+分类:按照作用域分类：局部变量和全局变量
+按照数据类型分类：基本类型变量和引用类型变量
+
+引用数据类型和基本数据类型的区别：
+
+引用数据类型：类，接口，自定义的数组
+
+第三章：流程控制（判断、循环）
+
+判断的语法：两种
+if  else
+
+if （）{}else if（）{}  else
+
+switch（a） case 0 case1 case2
+
+循环的语法：三种
+for（初始化语句；判断条件语句（最大范围）；循环频率）
+{循环体}
+while（循环条件）{循环体}
+do{循环体}while（循环条件）
+
+
+操作符：
+位移操作符：操作的是二进制
+无符号位移：>>>右移  <<左移
+>>有符号右移
+
+int类型十进制转二进制是怎么位移的：
+00000000 00000000 00000000 00001010
+&
+00000000 00000000 00000000 00000001
+=
+00000000 00000000 00000000 00001010
+for(i=31;i>0;i--)  //倒序
+{
+	int a;
+	a=B(原来的数)>>i;
+	a=a&1;
+}输出a
+相同为假，不同为真
+
+
+第四章：数组
+数组的定义：
+数组的声明：数据类型[] 数组名 = new 数据类型 [数组长度]；
+数组的遍历：数组a
+for(int i=0;i<array.length;i++)	 
+	   System.out.println(i);  
+数组方法：拷贝数组
+  system.arraycopy
+  for循环
+
+
+第五章：构造器
+属性、方法，构造方法（构造器）
+
+int 默认是0  double 是0.00  引用数据类型是null
+
+一个方法中可以有多个构造器，要看成员变量的数量
+
+默认类是Object,里面的方法有toString
+
+任何类都有一个默认的构造器，是一个无参构造器
+
+类只涉及定义，不涉及任何执行，用测试类或者用对象来执行
+
+this: 本类的引用
+super：父类的引用
+
+public  类内（同包同类）  同包不同类   子类  其他类   都能用
+
+Math.random 这个随机数方法规定了出来的数左闭右开   0.0-1.0
+50-100  *51（*50的结果是0-50因为右开，取不到51）+50 
+40-100  *61+40  
+30-100  *71+30    *（100-30+1）+30
+0-100   *101   取不到101 
+
+jdk1.5的新特性：
+一：自动装箱和自动拆箱~
+————————————————————————————————————
+1）装箱和拆箱
+装箱：把基本数据类型转化为类类型
+拆箱：把类类型转化为基本数据类型
+java的数据类型分为基本数据类型和引用数据类型。java是面向对象的语言，所以Java就希望
+并且要求java中操作的都是对象。所以所有的基本数据类型都对应一个包装类。
+基本数据类型：byte,short,int,long,float,double,boolean,char
+引用数据类型：类类型，接口类型，数组类型
+包装类：Byte,Short,Integer,Long,Float,Double,Boolean,Character
+2)如何进行装箱和拆箱
+数值类：Byte,Short,Integer,Long,Float,Double
+
+
+TreeMap和TreeSet分别实现Set和Map接口
+
+TreeSet：只存储一个对象，有序且不能重复，是一个数组型的集合，内部有特定的排序方法
+TreeMap：存储两个对象(key,value)，有序可以重复，实现通过红黑树
+并且TreeSet底层是通过TreeMap来实现的，如同HashSet底层是通过HashMap来实现的一样
+
+优先级：静态代码块>匿名代码块（非静态代码块）>构造器
+
+如果后减前大于0  -1  交换位置   降序
+    前减后小于0  1   不交换位置  升序
+
+
+变态题
+
+
+socket里面定义的 InputStream  OutputStream
+
+服务器：输入流：从客户端拿来的socket的数据
+		输出流：输出到相应的文件
+
+端口号 65536 范围0-655635  前1024被占用
+
+char默认值 \u0000
+
+java采用unicode,2个字节（16位）来表示一个字符
+
+
+一个字母=一个字节  一个汉字=一个字符=2个字节
+
+
+1字节： byte , boolean    8bit 可表达 2的八次方个数字     默认值0
+2字节： short , char	  16bit 可表达2的十六次方个数字
+4字节： int , float       32bit
+8字节： long , double	  64bit
+注：1字节(byte)=8位(bits)
+默认值：
+boolean   false
+char	  '/uoooo'(null)
+byte	  (byte)0
+short	  (short)0
+int	      0
+long	      0L
+float	      0.0f
+double	      0.0d
+
+多线程和多进程的区别：
+
+进程是程序执行的一个实例
+
+
+使用 group by 子句、where 子句和分组函数有以下一些注意事项：
+
+	1、分组函数只能出现在选择列表、having 子句和 order by 子句中
+
+	2、如果在select 语句中同时包含 group by 、having 以及 order by 子句，则必须将 order by 子句放在最后。默认情况下，当使用 group by 子句统计数组时，会自动按照分组列的升序显示统计结果。通过使用 order by 子句，可以改变数据分组的排序方式。
+
+	3、SELECT子句中的列或者是表达式如果没有包含在组函数里，则一定要包含在GROUP BY子句里，否则会显示错误消息。
+
+	4、当限制分组显示结果时，必须要使用 having 子句，而不能在 where 子句中使用分组函数限制显示结果，否则会显示错误信息。
+
+    5、WHERE子句和GROUP BY 子句中不能使用别名
+	
+    6、使用了GROUP BY子句后如果还想进行条件过滤，则需使用HAVING子句。
+	 
+	having和where的区别：
+	①where子句只能接收from子句输出的数据，
+	而having子句则可以接受来自group?by，where或者from子句的输入
+	②WHERE 后面的条件中不能有聚集函数，比如SUM(),AVG()等，而HAVING 可以
+	③where自居仅仅用于从from子句中返回的值，from子句返回的每一行数据都会用where子句中的条件进行判断筛选。
+	  where子句中允许使用比较运算符（>,<,>=,<=,<>,!=|等）和逻辑运算符（and，or，not）。
+	④having子句通常是与group/order by 子句一起使用的。不能单独使用
+	  因为having的作用是对使用group by进行分组统计后的结果进行进一步的筛选
+	  
+	  
+ 12.11
+ 1、 service(ServletRequest req,ServletResponse res)
+	{
+		service(HttpServletRequest()req,HttpServletResponse(res)){
+			doget/dopost
+		}
+	 
+	}
+ 2、 service(HttpServletRequest request,HttpServletResponse response)
+   
+ 
+  怎么创建一个servlet  三种方式：
+ 1、 实现接口        servlet
+ 2、 继承抽象类      GenericServlet  直接继承父类
+ 3、 继承             HttpServlet     最常用的
+ 
+ 4、 doxxx
+       doget/dopost/dodelete
+ 
+ 
+ create table books(
+      id number PRIMARY KEY,
+	  bookName varchar2(50),
+	  author varchar2(50),
+	  publishDate date,
+	  price number(9,2)
+ 
+ )
+ //计算总耗时
+ long start = System.currentTimeMillis();
+ local.set(start);
+ long end = System.currentTimeMillis();
+		System.out.println("共耗时:" + (end - local.get()));
+ 
+ 
+ 
+ 
+html转JSP 要加这两句话
+开头加
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() 
+
++ ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<head>下面加
+<base href="<%=basePath %>">
+
+
+改表单的时候在<tbody>下面写
+例如：
+<c:forEach items="${users }" var="user" varStatus="status" >
+    <tr>
+      <td>${status.index+1 }</td>
+      <td>${user.usr_name }</td>
+      <td>${user.usr_role_name }</td>
+     <c:if test="${user.usr_flag == 1}">
+      <td>正常</td>
+     </c:if>
+     <c:if test="${user.usr_flag == 0}">
+      <td>注销</td>
+     </c:if>
+ 
+ 
+原子性是单个的一致性
+一致性是多个的一致性
+ 
+ 
+对象------------->byte[]	保存到redis
+对象一定要支持序列化
+
+ByteArrayOutputStream() bos
+
+ObjcetOutputStream(bos)  oos
+
+oos.writeObject(oos)
+
+byte[] b = bos.tobyteArray()
+
+
+
+byte[]------------->对象
+
+ByteArrayInputStream(byte[] b)  bis
+
+ObjectInputStream(bis) ois
+
+Object o = ois.readObject();
+
+
+ 
+在application.properties里面改端口号：
+server.port=8082
+
+
+80    apache  静态服务器（html）
+8080  tomcat  动态服务器（jsp）
+3306  myspq   数据服务器
+443
+22
+8888
+
+
+Android安装配置
+1、JDK
+2、SDK
+    ANDROID_HOME sdk安装目录
+	Path %ANDROID_HOME%/platform-tools
+		 %ANDROID_HOME%/tools
+	
+3、adb  
+	Android Debug Bridge   安卓调试桥  
+	adb devices  展示连接列表
+	adb kill-server 删除所有已连接的设备
+	adb connect 
+	
+4、gradle
+	gradle用来将java代码转换成apk，运行在android端，是用来构建的
+		
+5、cordova
+	nodejs  npm包管理工具
+			cnpm淘宝安装包的工具
+			yarn
+	（1）npm install -g cordova
+		cordova -v    9.0.0
+	（2）创建项目
+		创建文件夹androidBase -->day01
+		在day01里使用cordova create app01
+	（3）添加运行平台
+		在app01里使用 cordova platform add android     注意联网
+	（4）运行cordova项目
+		cordova requirements  首先检测cordova依赖的环境是否全部配置好
+	
+		然后使用adb devices 查看已连接的设备 如果有 直接运行
+		cordova run android  
+		
+		
+		
+表单提交中get和post方式的区别：
+1） get是从服务器上获取数据，post是向服务器传送数据
+2） 对于get方式，服务器端用request.QueryString获取变量的值
+   对于post方式，服务器端用request.form获取提交的数据
+3） get安全性低，post安全性高
+
+
+http和https
+https比http更安全
+
+
+TCP和UDP
+1） TCP是面向连接的，UDP发送数据前不需要先建立连接
+2） TCP 1对1  UDP 1对1 1对多
+
